@@ -1,0 +1,650 @@
+[
+  {
+    "key": "clark_1998",
+    "input": {
+      "title": "The Extended Mind",
+      "author": "Clark",
+      "year": "1998"
+    },
+    "candidates": [
+      {
+        "doi": "10.1093/analys/58.1.7",
+        "score": 24.809029,
+        "title": "The Extended Mind",
+        "container": "Analysis",
+        "authors": "A. Clark, D. Chalmers",
+        "year": 1998,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1111/1468-0017.00092",
+        "score": 20.211456,
+        "title": "What’s Knowledge Anyway?",
+        "container": "Mind &amp; Language",
+        "authors": "Andy Clark",
+        "year": 1998,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1086/392698",
+        "score": 18.812027,
+        "title": "A Mind is a Terrible Thing to Waste—Critical Notice: Jaegwon Kim, <i>Mind in a Physical World</i>",
+        "container": "Philosophy of Science",
+        "authors": "Clark Glymour",
+        "year": 1999,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "appleton_2020",
+    "input": {
+      "title": "A Brief History \\& Ethos of the Digital Garden",
+      "author": "Appleton",
+      "year": "2020"
+    },
+    "candidates": [
+      {
+        "doi": "10.1080/13614533.2021.1994184",
+        "score": 19.489317,
+        "title": "Accelerating the digital shift: how a global pandemic has created an environment for rapid change in academic libraries",
+        "container": "New Review of Academic Librarianship",
+        "authors": "Leo Appleton",
+        "year": 2021,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1007/978-3-030-29227-0_2",
+        "score": 19.228802,
+        "title": "History of Arch Bridges in Portugal",
+        "container": "Structural Integrity",
+        "authors": "Júlio Appleton",
+        "year": 2019,
+        "type": "book-chapter"
+      },
+      {
+        "doi": "10.1525/abt.2019.81.1.12",
+        "score": 18.502386,
+        "title": "Using Digital Organism Evolutionary Software in the Classroom",
+        "container": "The American Biology Teacher",
+        "authors": "Luke Appleton, Joshua Mackie",
+        "year": 2019,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "caulfield_2015",
+    "input": {
+      "title": "The Garden and the Stream: A Technopastoral - Hapgood",
+      "author": "Caulfield",
+      "year": "2015"
+    },
+    "candidates": []
+  },
+  {
+    "key": "james_1892",
+    "input": {
+      "title": "The stream of consciousness",
+      "author": "James",
+      "year": "1892"
+    },
+    "candidates": [
+      {
+        "doi": "10.1093/mind/ii.7.363",
+        "score": 15.723341,
+        "title": "THE ORIGINAL DATUM OF SPACE-CONSCIOUSNESS",
+        "container": "Mind",
+        "authors": "W. JAMES",
+        "year": 1893,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1097/00000441-189106000-00012",
+        "score": 13.784624,
+        "title": "THE LORD OF HUMANITY, OR THE TESTIMONY OF HUMAN CONSCIOUSNESS",
+        "container": "The American Journal of the Medical Sciences",
+        "authors": "FREDERICK JAMES GANT",
+        "year": 1891,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "malone_1983",
+    "input": {
+      "title": "How do people organize their desks?: Implications for the design\n               of office information systems",
+      "author": "Malone",
+      "year": "1983"
+    },
+    "candidates": [
+      {
+        "doi": "10.1145/800210.806476",
+        "score": 82.86146,
+        "title": "How do people organize their desks? (Extended Abstract)",
+        "container": "Proceedings of the SIGOA conference on Office information systems  -",
+        "authors": "Thomas W. Malone",
+        "year": 1982,
+        "type": "proceedings-article"
+      },
+      {
+        "doi": "10.1145/357423.357430",
+        "score": 76.79892,
+        "title": "How do people organize their desks?",
+        "container": "ACM Transactions on Information Systems",
+        "authors": "Thomas W. Malone",
+        "year": 1983,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1145/966873.806476",
+        "score": 75.21184,
+        "title": "How do people organize their desks? (Extended Abstract)",
+        "container": "ACM SIGOA Newsletter",
+        "authors": "Thomas W. Malone",
+        "year": 1982,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "page_2014",
+    "input": {
+      "title": "Skeuomorphism or flat design: future directions in mobile device User Interface (UI) design education",
+      "author": "Page",
+      "year": "2014"
+    },
+    "candidates": [
+      {
+        "doi": "10.1504/ijmlo.2014.062350",
+        "score": 99.92313,
+        "title": "Skeuomorphism or flat design: future directions in mobile device User Interface (UI) design education",
+        "container": "International Journal of Mobile Learning and Organisation",
+        "authors": "Tom Page",
+        "year": 2014,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.4018/jgc.2013010102",
+        "score": 34.48117,
+        "title": "Use of Mobile Device Apps in Product Design",
+        "container": "International Journal of Green Computing",
+        "authors": "Tom Page",
+        "year": 2013,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1504/ijmlo.2014.062347",
+        "score": 33.973663,
+        "title": "Application-based mobile devices in design education",
+        "container": "International Journal of Mobile Learning and Organisation",
+        "authors": "Tom Page",
+        "year": 2014,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "bush_1945",
+    "input": {
+      "title": "As we may think",
+      "author": "Bush",
+      "year": "1945"
+    },
+    "candidates": []
+  },
+  {
+    "key": "green_1989",
+    "input": {
+      "title": "Cognitive dimensions of notations",
+      "author": "Green",
+      "year": "1989"
+    },
+    "candidates": [
+      {
+        "doi": "10.17118/11143/19905",
+        "score": 17.389284,
+        "title": "«Les dimensions internationales du droit humanitaire» et «Droit humanitaire et conflits internes»",
+        "container": "Revue de droit. Université de Sherbrooke",
+        "authors": "L.C. Green",
+        "year": 1989,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1142/9789814542340_0074",
+        "score": 16.947285,
+        "title": "ANOMALY-FREE CHIRAL THEORIES IN SIX DIMENSIONS",
+        "container": "Supergravities in Diverse Dimensions",
+        "authors": "Michael B. GREEN, John H. SCHWARZ, P.C WEST",
+        "year": 1989,
+        "type": "book-chapter"
+      },
+      {
+        "doi": "10.1002/acp.2350030115",
+        "score": 16.711311,
+        "title": "Interfacing thought: Cognitive aspects of human‐computer interaction, John M. Carroll (Ed.). MIT Press, Cambridge, Mass., 1987. No. of pages: XV + 365, Price £26.95. ISBN 0‐262‐03125‐6 (hardback)",
+        "container": "Applied Cognitive Psychology",
+        "authors": "Alison J. K. Green",
+        "year": 1989,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "dubroy_2010",
+    "input": {
+      "title": "A study of tabbed browsing among mozilla firefox users",
+      "author": "Dubroy",
+      "year": "2010"
+    },
+    "candidates": [
+      {
+        "doi": "10.1145/1753326.1753426",
+        "score": 88.83995,
+        "title": "A study of tabbed browsing among mozilla firefox users",
+        "container": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+        "authors": "Patrick Dubroy, Ravin Balakrishnan",
+        "year": 2010,
+        "type": "proceedings-article"
+      }
+    ]
+  },
+  {
+    "key": "welford_1952",
+    "input": {
+      "title": "The psychological refractory period and the timing of high-speed performance-a review and a theory",
+      "author": "Welford",
+      "year": "1952"
+    },
+    "candidates": [
+      {
+        "doi": "10.1111/j.2044-8295.1952.tb00322.x",
+        "score": 62.0048,
+        "title": "THE ‘PSYCHOLOGICAL REFRACTORY PERIOD’ AND THE TIMING OF HIGH‐SPEED PERFORMANCE—A REVIEW AND A THEORY",
+        "container": "British Journal of Psychology. General Section",
+        "authors": "A. T. WELFORD",
+        "year": 1952,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1038/169728a0",
+        "score": 22.744003,
+        "title": "Psychological and Physiological Aspects of Fatigue",
+        "container": "Nature",
+        "authors": "A. T. WELFORD",
+        "year": 1952,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1093/occmed/2.2.78",
+        "score": 22.016886,
+        "title": "Changes in Human Performance with Age",
+        "container": "Occupational Medicine",
+        "authors": "A.T. WELFORD",
+        "year": 1952,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "mcleod_1977",
+    "input": {
+      "title": "Parallel processing and the psychological refractory period",
+      "author": "McLeod",
+      "year": "1977"
+    },
+    "candidates": [
+      {
+        "doi": "10.1016/0001-6918(77)90016-6",
+        "score": 49.346485,
+        "title": "Parallel processing and the psychological refractory period",
+        "container": "Acta Psychologica",
+        "authors": "Peter McLeod",
+        "year": 1977,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1136/jnnp.40.5.434",
+        "score": 22.574162,
+        "title": "Refractory period, conduction of trains of impulses, and effect of temperature on conduction in chronic hypertrophic neuropathy.",
+        "container": "Journal of Neurology, Neurosurgery &amp; Psychiatry",
+        "authors": "P A Low, J G McLeod",
+        "year": 1977,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.2307/40132152",
+        "score": 18.289742,
+        "title": "Japanese Literature in Chinese. II: Poetry &amp; Prose by Japanese Writers of the Later Period",
+        "container": "World Literature Today",
+        "authors": "R. McLeod, Burton Watson",
+        "year": 1977,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "baddeley_1974",
+    "input": {
+      "title": "Working Memory",
+      "author": "Baddeley",
+      "year": "1974"
+    },
+    "candidates": [
+      {
+        "doi": "10.1016/s0079-7421(08)60452-1",
+        "score": 28.191391,
+        "title": "Working Memory",
+        "container": "Psychology of Learning and Motivation",
+        "authors": "Alan D. Baddeley, Graham Hitch",
+        "year": 1974,
+        "type": "book-chapter"
+      },
+      {
+        "doi": "10.1080/14640747408400444d",
+        "score": 21.609917,
+        "title": "Book Review: Organization of Memory",
+        "container": "Quarterly Journal of Experimental Psychology",
+        "authors": "A. D. Baddeley",
+        "year": 1974,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1016/0010-0285(74)90003-6",
+        "score": 21.11301,
+        "title": "Acoustic memory and the perception of speech",
+        "container": "Cognitive Psychology",
+        "authors": "C.J. Darwin, A.D. Baddeley",
+        "year": 1974,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "baars_2005",
+    "input": {
+      "title": "Global workspace theory of consciousness: toward a cognitive neuroscience of human experience",
+      "author": "Baars",
+      "year": "2005"
+    },
+    "candidates": [
+      {
+        "doi": "10.1016/s0079-6123(05)50004-9",
+        "score": 72.085526,
+        "title": "Global workspace theory of consciousness: toward a cognitive neuroscience of human experience",
+        "container": "Progress in Brain Research",
+        "authors": "Bernard J. Baars",
+        "year": 2005,
+        "type": "book-chapter"
+      },
+      {
+        "doi": "10.1016/j.cognition.2004.11.007",
+        "score": 37.164703,
+        "title": "Applying global workspace theory to the frame problem",
+        "container": "Cognition",
+        "authors": "Murray Shanahan, Bernard Baars",
+        "year": 2005,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1002/0470018860.s00297",
+        "score": 34.023827,
+        "title": "Consciousness, Cognitive Theories of",
+        "container": "Encyclopedia of Cognitive Science",
+        "authors": "Bernard J Baars",
+        "year": 2006,
+        "type": "other"
+      }
+    ]
+  },
+  {
+    "key": "whittaker_2011",
+    "input": {
+      "title": "Personal information management: From information consumption to curation",
+      "author": "Whittaker",
+      "year": "2011"
+    },
+    "candidates": [
+      {
+        "doi": "10.1002/aris.2011.1440450108",
+        "score": 55.977272,
+        "title": "Personal information management: From information consumption to curation",
+        "container": "Annual Review of Information Science and Technology",
+        "authors": "Steve Whittaker",
+        "year": 2011,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1515/9780295800684-010",
+        "score": 33.961582,
+        "title": "10. Everything through Email",
+        "container": "Personal Information Management",
+        "authors": "Steve Whittaker, Victoria Bellotti, Jacek Gwizdka",
+        "year": 2011,
+        "type": "book-chapter"
+      },
+      {
+        "doi": "10.1037/e507502013-288",
+        "score": 23.186214,
+        "title": "CAREX Canada: Using Web-hosted Videos as Knowledge Translation Aids for Scientific Information",
+        "container": "PsycEXTRA Dataset",
+        "authors": "Cloe Whittaker",
+        "year": 2012,
+        "type": "dataset"
+      }
+    ]
+  },
+  {
+    "key": "rosenfeld_2002",
+    "input": {
+      "title": "Information architecture for the world wide web",
+      "author": "Rosenfeld",
+      "year": "2002"
+    },
+    "candidates": [
+      {
+        "doi": "10.1002/asi.10098",
+        "score": 25.067875,
+        "title": "Information architecture: Looking ahead",
+        "container": "Journal of the American Society for Information Science and Technology",
+        "authors": "Louis Rosenfeld",
+        "year": 2002,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1002/meet.1450390150",
+        "score": 19.89566,
+        "title": "User studies and information architecture. Sponsored by SIG USE, SIG IA",
+        "container": "Proceedings of the American Society for Information Science and Technology",
+        "authors": "David Robins, Gary Marchionini, Louis Rosenfeld",
+        "year": 2002,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1088/2058-7058/14/2/30",
+        "score": 18.761147,
+        "title": "Pollution and clouds",
+        "container": "Physics World",
+        "authors": "Daniel Rosenfeld, William Woodley",
+        "year": 2001,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "liu_2014",
+    "input": {
+      "title": "A survey on information visualization: recent advances and challenges",
+      "author": "Liu",
+      "year": "2014"
+    },
+    "candidates": [
+      {
+        "doi": "10.1007/s00371-013-0892-3",
+        "score": 38.20449,
+        "title": "A survey on information visualization: recent advances and challenges",
+        "container": "The Visual Computer",
+        "authors": "Shixia Liu, Weiwei Cui, Yingcai Wu",
+        "year": 2014,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1016/j.advengsoft.2015.08.002",
+        "score": 21.398628,
+        "title": "Intermediate model based efficient and integrated multidisciplinary simulation data visualization for simulation information reuse",
+        "container": "Advances in Engineering Software",
+        "authors": "Yanli Shao, Yusheng Liu, Chunguang Li",
+        "year": 2015,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.2991/icismme-15.2015.405",
+        "score": 21.324154,
+        "title": "Database Modeling and Visualization Simulation technology Based on Java3D",
+        "container": "Advances in Intelligent Systems Research",
+        "authors": "Hongxia Liu",
+        "year": 2015,
+        "type": "proceedings-article"
+      }
+    ]
+  },
+  {
+    "key": "silva_2000",
+    "input": {
+      "title": "Visualization of linear time-oriented data: a survey",
+      "author": "Silva",
+      "year": "2000"
+    },
+    "candidates": [
+      {
+        "doi": "10.1007/978-3-7091-6215-6_25",
+        "score": 17.726984,
+        "title": "A Hardware-Assisted Visibility-Ordering Algorithm With Applications To Volume Rendering",
+        "container": "Eurographics",
+        "authors": "Shankar Krishnan, Claudio T. Silva, Bin Wei",
+        "year": 2001,
+        "type": "book-chapter"
+      },
+      {
+        "doi": "10.1016/s0167-9473(98)00090-5",
+        "score": 17.177216,
+        "title": "On the maximum-likelihood analysis of the general linear model in categorical data",
+        "container": "Computational Statistics &amp; Data Analysis",
+        "authors": "Carlos Daniel M. Paulino, Giovani Loiola Silva",
+        "year": 1999,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1109/9.802920",
+        "score": 16.213017,
+        "title": "Polyhedral regions of local stability for linear discrete-time systems with saturating controls",
+        "container": "IEEE Transactions on Automatic Control",
+        "authors": "J.M.G. da Silva, S. Tarbouriech",
+        "year": 1999,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "brehmer_2017",
+    "input": {
+      "title": "Timelines Revisited: A Design Space and Considerations for Expressive Storytelling",
+      "author": "Brehmer",
+      "year": "2017"
+    },
+    "candidates": [
+      {
+        "doi": "10.1109/tvcg.2016.2614803",
+        "score": 60.220432,
+        "title": "Timelines Revisited: A Design Space and Considerations for Expressive Storytelling",
+        "container": "IEEE Transactions on Visualization and Computer Graphics",
+        "authors": "Matthew Brehmer, Bongshin Lee, Benjamin Bach",
+        "year": 2017,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1109/tvcg.2015.2467531",
+        "score": 24.24342,
+        "title": "TimeLineCurator: Interactive Authoring of Visual Timelines from Unstructured Text",
+        "container": "IEEE Transactions on Visualization and Computer Graphics",
+        "authors": "Johanna Fulda, Matthew Brehmer, Tamara Munzner",
+        "year": 2016,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1201/9781315281575-11",
+        "score": 23.731411,
+        "title": "Evaluating Data-Driven Stories and Storytelling Tools *",
+        "container": "Data-Driven Storytelling",
+        "authors": "Fereshteh Amini, Matthew Brehmer, Gordon Bolduan",
+        "year": 2018,
+        "type": "book-chapter"
+      }
+    ]
+  },
+  {
+    "key": "bruner_2009",
+    "input": {
+      "title": "Actual minds, possible worlds",
+      "author": "Bruner",
+      "year": "2009"
+    },
+    "candidates": [
+      {
+        "doi": "10.1080/03054980802116840",
+        "score": 22.122635,
+        "title": "Cultivating the possible: a tribute to Harry Judge",
+        "container": "Oxford Review of Education",
+        "authors": "Jerome Bruner",
+        "year": 2008,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1260/174795408787186468",
+        "score": 16.640724,
+        "title": "Gaining Insight into Actual and Preferred Sources of Coaching Knowledge",
+        "container": "International Journal of Sports Science &amp; Coaching",
+        "authors": "Karl Erickson, Mark W. Bruner, Dany J. MacDonald",
+        "year": 2008,
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.1007/s00276-008-0371-0",
+        "score": 14.251429,
+        "title": "An unusually-wide human bregmatic Wormian bone: anatomy, tomographic description, and possible significance",
+        "container": "Surgical and Radiologic Anatomy",
+        "authors": "Fabrizio Barberini, Emiliano Bruner, Roberto Cartolari",
+        "year": 2008,
+        "type": "journal-article"
+      }
+    ]
+  },
+  {
+    "key": "fertig_1996",
+    "input": {
+      "title": "Lifestreams: an alternative to the desktop metaphor",
+      "author": "Fertig",
+      "year": "1996"
+    },
+    "candidates": [
+      {
+        "doi": "10.1145/257089.257404",
+        "score": 54.967888,
+        "title": "Lifestreams",
+        "container": "Conference companion on Human factors in computing systems common ground - CHI '96",
+        "authors": "Scott Fertig, Eric Freeman, David Gelernter",
+        "year": 1996,
+        "type": "proceedings-article"
+      },
+      {
+        "doi": "10.1111/j.1530-0277.1995.tb01021.x",
+        "score": 16.634407,
+        "title": "γ‐Glutamyltranspeptidase and Carbohydrate Deficient Transferrin: Alternative Measures of Excessive Alcohol Consumption",
+        "container": "Alcoholism: Clinical and Experimental Research",
+        "authors": "Raye Z. Litten, John P. Allen, Joanne B. Fertig",
+        "year": 1995,
+        "type": "journal-article"
+      }
+    ]
+  }
+]

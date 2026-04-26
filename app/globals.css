@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --panel: #f7f7f8;
+  --panel-2: #ffffff;
+  --border: #e5e5e7;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --green: #16a34a;
+  --yellow: #ca8a04;
+  --red: #dc2626;
+  --grey: #6b7280;
+  --diff-add-bg: #dcfce7;
+  --diff-rem-bg: #fee2e2;
 }
 
 @theme inline {
@@ -16,11 +27,28 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --panel: #15171c;
+    --panel-2: #1c1f26;
+    --border: #2a2e38;
+    --muted: #8b93a3;
+    --accent: #6ea8ff;
+    --green: #5cd28a;
+    --yellow: #f0c969;
+    --red: #ff7a85;
+    --grey: #6b7280;
+    --diff-add-bg: #1e3a2c;
+    --diff-rem-bg: #4b1e23;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
 }
+
+* { box-sizing: border-box; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.6; }
+
+code, pre, .mono { font-family: var(--font-geist-mono), ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, monospace; }
