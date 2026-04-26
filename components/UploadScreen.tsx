@@ -1,17 +1,52 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function UploadScreen({
   busy,
   error,
   onFile,
+  onPasteText,
 }: {
   busy: boolean;
   error: string | null;
   onFile: (f: File) => void;
+  onPasteText: (text: string) => void;
 }) {
   const [drag, setDrag] = useState(false);
+  const [localError, setLocalError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Global paste shortcut: Cmd/Ctrl+V on the upload screen ingests the
+  // clipboard text as .bib. Skip when busy, and never intercept paste
+  // targeted at an editable element (inputs/textareas).
+  useEffect(() => {
+    if (busy) return;
+    const onPaste = (e: ClipboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      const editable =
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable);
+      if (editable) return;
+      const text = e.clipboardData?.getData("text/plain") ?? "";
+      if (!text.trim()) return;
+      e.preventDefault();
+      if (!looksLikeBib(text)) {
+        setLocalError("クリップボードの内容はBibTeXとして解釈できませんでした。");
+        return;
+      }
+      setLocalError(null);
+      onPasteText(text);
+    };
+    document.addEventListener("paste", onPaste);
+    return () => document.removeEventListener("paste", onPaste);
+  }, [busy, onPasteText]);
+
+  const displayError = error ?? localError;
+  const clearLocalError = () => setLocalError(null);
+
   return (
     <div className="flex flex-1 items-center justify-center min-h-screen p-8">
       <div className="w-full max-w-xl">
@@ -29,12 +64,15 @@ export function UploadScreen({
             : 確定したDOIから`journal`/`publisher`/`pages`等を補完。DOIが無いエントリは対象外です。
           </li>
         </ol>
-        <label
-          className={`block border-2 border-dashed rounded-xl p-10 text-center transition-colors ${
-            drag
-              ? "border-[var(--accent)] bg-[color-mix(in_srgb,var(--accent)_8%,transparent)]"
-              : "border-[var(--border)]"
-          }`}
+
+        <button
+          type="button"
+          disabled={busy}
+          aria-label=".bibをアップロードまたはドロップ"
+          onClick={() => {
+            clearLocalError();
+            fileInputRef.current?.click();
+          }}
           onDragOver={(e) => {
             e.preventDefault();
             setDrag(true);
@@ -43,37 +81,43 @@ export function UploadScreen({
           onDrop={(e) => {
             e.preventDefault();
             setDrag(false);
+            clearLocalError();
             const f = e.dataTransfer.files[0];
             if (f) onFile(f);
           }}
+          className={`block w-full border-2 border-dashed rounded-xl p-10 text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed ${
+            drag
+              ? "border-[var(--accent)] bg-[color-mix(in_srgb,var(--accent)_8%,transparent)]"
+              : "border-[var(--border)] hover:bg-[var(--panel)]"
+          }`}
         >
-          <div className="text-base mb-2">.bib をドロップ</div>
-          <div className="text-xs text-[var(--muted)] mb-4">またはクリックして選択</div>
-          <input
-            type="file"
-            accept=".bib,text/x-bibtex,application/x-bibtex,text/plain"
-            className="hidden"
-            onChange={(e) => {
-              const f = e.target.files?.[0];
-              if (f) onFile(f);
-            }}
-          />
-          <button
-            type="button"
-            disabled={busy}
-            className="px-3 py-1.5 rounded border border-[var(--border)] hover:bg-[var(--panel)]"
-            onClick={(e) => {
-              const input = (e.currentTarget.parentElement as HTMLLabelElement).querySelector(
-                'input[type="file"]',
-              ) as HTMLInputElement;
-              input?.click();
-            }}
-          >
-            {busy ? "処理中…" : "ファイルを選択"}
-          </button>
-        </label>
-        {error && <div className="mt-4 text-sm text-[var(--red)]">{error}</div>}
+          <div className="text-base mb-1">{busy ? "処理中…" : ".bib をドロップ"}</div>
+          <div className="text-xs text-[var(--muted)]">またはクリックして選択</div>
+        </button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept=".bib,text/x-bibtex,application/x-bibtex,text/plain"
+          className="hidden"
+          onChange={(e) => {
+            clearLocalError();
+            const f = e.target.files?.[0];
+            if (f) onFile(f);
+            e.target.value = "";
+          }}
+        />
+
+        <div className="text-xs py-2 text-center text-[var(--muted)] opacity-60">
+          ⌘V / Ctrl+V でクリップボードから取り込めます
+        </div>
+
+        {displayError && <div className="mt-4 text-sm text-[var(--red)]">{displayError}</div>}
       </div>
     </div>
   );
+}
+
+function looksLikeBib(text: string): boolean {
+  // Tolerant heuristic: at least one BibTeX entry header.
+  return /@\w{2,}\s*\{/.test(text);
 }

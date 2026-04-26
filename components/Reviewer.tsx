@@ -140,13 +140,11 @@ export default function Reviewer() {
 
   // -------- Top-level callbacks --------
 
-  const onUpload = useCallback(
-    async (file: File) => {
+  const ingest = useCallback(
+    async (text: string, name: string) => {
       setBusy(true);
       setError(null);
       try {
-        const text = await file.text();
-        setFilename(file.name);
         const res = await fetch("/api/parse", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -154,6 +152,10 @@ export default function Reviewer() {
         });
         if (!res.ok) throw new Error(`parse failed: ${res.status}`);
         const data = (await res.json()) as ParseResponse;
+        if (data.entries.length === 0) {
+          throw new Error("有効なBibTeXエントリが見つかりませんでした");
+        }
+        setFilename(name);
         const states: EntryState[] = data.entries.map((e) => ({
           entry: e,
           searching: false,
@@ -178,6 +180,21 @@ export default function Reviewer() {
       }
     },
     [searchPool, metaPool],
+  );
+
+  const onUpload = useCallback(
+    async (file: File) => {
+      const text = await file.text();
+      await ingest(text, file.name);
+    },
+    [ingest],
+  );
+
+  const onPasteText = useCallback(
+    async (text: string) => {
+      await ingest(text, "(pasted).bib");
+    },
+    [ingest],
   );
 
   const onReset = useCallback(() => {
@@ -500,7 +517,9 @@ export default function Reviewer() {
     );
   }
   if (!entries) {
-    return <UploadScreen busy={busy} error={error} onFile={onUpload} />;
+    return (
+      <UploadScreen busy={busy} error={error} onFile={onUpload} onPasteText={onPasteText} />
+    );
   }
   return (
     <div className="flex flex-1 min-h-screen">
