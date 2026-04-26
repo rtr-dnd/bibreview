@@ -163,32 +163,43 @@ export function authorLastNames(authorsField: string | undefined): string[] {
 }
 
 /**
- * Re-emit the source with the chosen DOIs injected. Decisions map
- * entry key -> DOI to set (or null/undefined to leave untouched).
+ * Re-emit the source with arbitrary field edits applied. Edits map
+ * entry key -> field name -> new value. Falsy values are skipped.
  */
-export function applyDois(parsed: ParsedBib, decisions: Record<string, string | null>): string {
-  // Walk entries in reverse so offsets stay valid as we splice.
+export function applyEntryEdits(
+  parsed: ParsedBib,
+  edits: Record<string, Record<string, string | null | undefined>>,
+): string {
   let out = parsed.source;
   const ordered = [...parsed.entries].sort((a, b) => b.start - a.start);
   for (const e of ordered) {
-    const newDoi = decisions[e.key];
-    if (!newDoi) continue;
-    const replacement = setDoiInRaw(e.raw, newDoi);
-    if (replacement === e.raw) continue;
-    out = out.slice(0, e.start) + replacement + out.slice(e.end);
+    const fields = edits[e.key];
+    if (!fields) continue;
+    let raw = e.raw;
+    for (const [name, value] of Object.entries(fields)) {
+      if (!value) continue;
+      raw = setField(raw, name, value);
+    }
+    if (raw !== e.raw) out = out.slice(0, e.start) + raw + out.slice(e.end);
   }
   return out;
 }
 
-function setDoiInRaw(raw: string, doi: string): string {
-  // If a doi field exists, replace its value. Otherwise insert before the closing brace.
-  const doiFieldRe = /(\bdoi\s*=\s*)(\{[^{}]*\}|"[^"]*"|[^,\n]*)/i;
-  if (doiFieldRe.test(raw)) {
-    return raw.replace(doiFieldRe, `$1{${doi}}`);
+/** Backwards-compatible: only set the doi field. */
+export function applyDois(parsed: ParsedBib, decisions: Record<string, string | null>): string {
+  const edits: Record<string, Record<string, string | null>> = {};
+  for (const [k, v] of Object.entries(decisions)) edits[k] = { doi: v };
+  return applyEntryEdits(parsed, edits);
+}
+
+function setField(raw: string, name: string, value: string): string {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const fieldRe = new RegExp(`(\\b${escaped}\\s*=\\s*)(\\{[^{}]*\\}|"[^"]*"|[^,\\n]*)`, "i");
+  if (fieldRe.test(raw)) {
+    return raw.replace(fieldRe, `$1{${value}}`);
   }
   // Detect indentation from the last field line.
   const lines = raw.split("\n");
-  // Find indentation of an existing field (line containing " = ").
   let indent = "  ";
   for (const line of lines) {
     const m = /^(\s+)\S+\s*=/.exec(line);
@@ -199,18 +210,16 @@ function setDoiInRaw(raw: string, doi: string): string {
   }
   const closeIdx = raw.lastIndexOf("}");
   if (closeIdx < 0) return raw;
-  // Ensure the previous non-space char is a comma; if not, append one.
-  let before = raw.slice(0, closeIdx);
+  const before = raw.slice(0, closeIdx);
   const trimmedBefore = before.trimEnd();
   const lastChar = trimmedBefore[trimmedBefore.length - 1];
   let prefix = before;
   if (lastChar !== "," && lastChar !== "{") {
-    // Insert a comma after the trimmed content, then a newline.
     prefix = trimmedBefore + ",\n";
   } else if (!before.endsWith("\n")) {
     prefix = before + "\n";
   }
-  const insertion = `${indent}doi = {${doi}},\n`;
+  const insertion = `${indent}${name} = {${value}},\n`;
   // Re-attach the closing brace at original column (start of closeIdx line).
   const after = raw.slice(closeIdx);
   return prefix + insertion + after;

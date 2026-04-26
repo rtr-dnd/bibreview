@@ -2,18 +2,33 @@
 
 const CROSSREF_URL = "https://api.crossref.org/works";
 
+// CrossRef polite-pool contact. Set CROSSREF_MAILTO in your Vercel project env
+// to a deliverable address; required for higher rate limits and recommended by
+// CrossRef. The fallback identifies the tool only.
 const POLITE_MAILTO = process.env.CROSSREF_MAILTO ?? "";
-const USER_AGENT = `doireview/0.1 (${POLITE_MAILTO ? `mailto:${POLITE_MAILTO}` : "https://github.com/skysoyn/doireview"})`;
+const USER_AGENT = POLITE_MAILTO
+  ? `bibreview/0.1 (mailto:${POLITE_MAILTO})`
+  : "bibreview/0.1";
 
 export type CrossrefItem = {
   DOI?: string;
   title?: string[];
   "container-title"?: string[];
+  "short-container-title"?: string[];
   author?: { given?: string; family?: string }[];
   issued?: { "date-parts"?: number[][] };
   type?: string;
   score?: number;
   URL?: string;
+  publisher?: string;
+  "publisher-location"?: string;
+  volume?: string;
+  issue?: string;
+  page?: string;
+  ISBN?: string[];
+  ISSN?: string[];
+  editor?: { given?: string; family?: string }[];
+  event?: { name?: string; location?: string };
 };
 
 export type SearchInput = {
@@ -46,6 +61,38 @@ export async function searchWorks(input: SearchInput): Promise<CrossrefItem[]> {
       if (res.ok) {
         const data = (await res.json()) as { message?: { items?: CrossrefItem[] } };
         return data.message?.items ?? [];
+      }
+      if (res.status === 429 || res.status >= 500) {
+        lastErr = new Error(`CrossRef ${res.status}`);
+      } else {
+        const body = await res.text().catch(() => "");
+        throw new Error(`CrossRef ${res.status}: ${body.slice(0, 200)}`);
+      }
+    } catch (err) {
+      lastErr = err;
+    }
+    if (attempt < maxAttempts) {
+      const delay = 250 * 2 ** (attempt - 1) + Math.floor(Math.random() * 150);
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+}
+
+export async function getWork(doi: string): Promise<CrossrefItem | null> {
+  const url = `${CROSSREF_URL}/${encodeURIComponent(doi)}`;
+  const maxAttempts = 3;
+  let lastErr: unknown = null;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+        cache: "no-store",
+      });
+      if (res.status === 404) return null;
+      if (res.ok) {
+        const data = (await res.json()) as { message?: CrossrefItem };
+        return data.message ?? null;
       }
       if (res.status === 429 || res.status >= 500) {
         lastErr = new Error(`CrossRef ${res.status}`);

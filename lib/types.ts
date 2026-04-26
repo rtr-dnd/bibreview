@@ -28,7 +28,8 @@ export type SearchResponse = {
 
 export type ExportRequest = {
   source: string;
-  decisions: Record<string, string | null>;
+  /** entry key -> { doi?, journal?, ... } */
+  edits: Record<string, Record<string, string | null | undefined>>;
 };
 
 export type ExportResponse = {

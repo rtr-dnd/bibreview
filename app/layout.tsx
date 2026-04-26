@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DOI Review",
-  description: "Review CrossRef DOI candidates for BibTeX entries",
+  title: "Bib Review",
+  description: "Review CrossRef DOI and metadata candidates for BibTeX entries",
 };
 
 export default function RootLayout({

@@ -19,7 +19,8 @@ export async function POST(req: NextRequest) {
   try {
     items = await searchWorks({ title, author, year });
   } catch (err) {
-    console.error("[search] CrossRef failure", { title, author, year, err: String(err) });
+    // Log the error type only — bib query fields can be private/unpublished.
+    console.error("[search] CrossRef failure:", String(err));
     return Response.json({ error: String(err) }, { status: 502 });
   }
   const lastNames = body.authorLastNames?.length
